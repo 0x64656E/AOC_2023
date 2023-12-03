@@ -20,19 +20,23 @@ public class Main {
                 int countRed = 0;
                 int countGreen = 0;
                 int countBlue = 0;
-                for(int k = 0; k < games.length;k++){
-                    String[] game = games[k].split(",");
-                    for(int j = 0; j < game.length; j++){
-                        String[] color = game[j].split(" ");
-                        if(color[2].equals("red")){
-                            if(countRed < Integer.parseInt(color[1]))
-                                countRed = Integer.parseInt(color[1]);
-                        }else if(color[2].equals("blue")){
-                            if(countBlue < Integer.parseInt(color[1]))
-                                countBlue = Integer.parseInt(color[1]);
-                            }else if(color[2].equals("green")){
-                            if(countGreen < Integer.parseInt(color[1]))
-                                countGreen = Integer.parseInt(color[1]);
+                for (String s : games) {
+                    String[] game = s.split(",");
+                    for (String value : game) {
+                        String[] color = value.split(" ");
+                        switch (color[2]) {
+                            case "red" -> {
+                                if (countRed < Integer.parseInt(color[1]))
+                                    countRed = Integer.parseInt(color[1]);
+                            }
+                            case "blue" -> {
+                                if (countBlue < Integer.parseInt(color[1]))
+                                    countBlue = Integer.parseInt(color[1]);
+                            }
+                            case "green" -> {
+                                if (countGreen < Integer.parseInt(color[1]))
+                                    countGreen = Integer.parseInt(color[1]);
+                            }
                         }
                     }
                 }
@@ -57,18 +61,18 @@ public class Main {
                 int countRed = 0;
                 int countGreen = 0;
                 int countBlue = 0;
-                for(int k = 0; k < games.length;k++){
-                    String[] game = games[k].split(",");
-                    for(int j = 0; j < game.length; j++){
-                        String[] color = game[j].split(" ");
-                        if(color[2].equals("red")){
-                            if(countRed < Integer.parseInt(color[1]))
+                for (String s : games) {
+                    String[] game = s.split(",");
+                    for (String value : game) {
+                        String[] color = value.split(" ");
+                        if (color[2].equals("red")) {
+                            if (countRed < Integer.parseInt(color[1]))
                                 countRed = Integer.parseInt(color[1]);
-                        }else if(color[2].equals("blue")){
-                            if(countBlue < Integer.parseInt(color[1]))
+                        } else if (color[2].equals("blue")) {
+                            if (countBlue < Integer.parseInt(color[1]))
                                 countBlue = Integer.parseInt(color[1]);
-                        }else if(color[2].equals("green")){
-                            if(countGreen < Integer.parseInt(color[1]))
+                        } else if (color[2].equals("green")) {
+                            if (countGreen < Integer.parseInt(color[1]))
                                 countGreen = Integer.parseInt(color[1]);
                         }
                     }
